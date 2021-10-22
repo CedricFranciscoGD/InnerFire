@@ -46,6 +46,10 @@ public class EnemyBehavior : MonoBehaviour
     private int m_progressMax;
     private Vector3 targetMovePointVectorPosition;
     [SerializeField] private float m_distToContinue;
+    
+    
+    /// ANIMATIONS
+    
 
     private void Start()
     {
