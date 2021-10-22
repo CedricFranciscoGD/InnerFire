@@ -48,6 +48,7 @@ public class EnemyBehavior : MonoBehaviour
     private Vector3 targetMovePointVectorPosition;
     [SerializeField] private float m_distToContinue;
 
+    private RingBehavior m_playerRing;
 
     /// ANIMATIONS
     [SerializeField] private Animator m_skeletonAnimator;
@@ -62,6 +63,7 @@ public class EnemyBehavior : MonoBehaviour
         m_enemyNavMesh = GetComponent<NavMeshAgent>();
         m_enemyNavMesh.speed = m_baseSpeed;
         m_progressMax = m_patrolPath.Length - 1;
+        m_playerRing = m_playerRef.GetComponentInChildren<RingBehavior>();
 
         LoadLevelAI(false);
     }
@@ -183,6 +185,7 @@ public class EnemyBehavior : MonoBehaviour
     private void SpeedIncrease()
     {
         m_enemyNavMesh.speed = m_ChaseSpeed;
+        m_playerRing.ChangeColorRing(1);
     }
     
     private void VisionDetect()
