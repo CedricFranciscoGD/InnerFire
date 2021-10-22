@@ -10,34 +10,17 @@ public class ChangeView : MonoBehaviour
     [SerializeField] private Transform m_transDest;
     [SerializeField] private GameObject m_cam;
     [SerializeField] private GameObject m_camSide;
-    [SerializeField] private bool m_isHanged = false;
+    public bool m_isHanged = false;
 
     [SerializeField] private int m_keyPressTime = 0;
-
-
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Enemy")) ;
-        {
-            Debug.Log("Dans la zone");
-            m_camSide.SetActive(true);
-            m_isHanged = true;
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Enemy"));
-        {
-            Debug.Log("Hors de la zone");
-            m_camSide.SetActive(false);
-        }
-    }
-
+    
     private void Update()
     {
         if (!m_isHanged) return;
+        if (m_isHanged)
+        {
+            m_camSide.SetActive(true);
+        }
         if (Input.GetKey(KeyCode.X))
         {
             m_keyPressTime += 1;
