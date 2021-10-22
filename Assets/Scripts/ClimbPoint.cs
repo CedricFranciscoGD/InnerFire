@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class ClimbPoint : MonoBehaviour
 {
+    [SerializeField] private int m_numberPointToClimb;
     [SerializeField] private Transform[] m_destinationPos;
     private int m_climbProgress = 0;
     private GameObject m_playerRef;
@@ -18,6 +19,9 @@ public class ClimbPoint : MonoBehaviour
     [SerializeField] private float m_lerpFillingAmount;
     private Vector3 m_stockPlayerPos;
     private bool m_procOnce = false;
+    
+    /// ANIMATIONS
+    [SerializeField] private Animator m_tummoAnimator;
 
     private void Start()
     {
@@ -82,6 +86,7 @@ public class ClimbPoint : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
+                m_tummoAnimator.SetBool("isHanging", true);
                 m_charaController.enabled = false;
                 m_isClimbing = true;
                 StartCoroutine(TempFixes());
@@ -117,6 +122,8 @@ public class ClimbPoint : MonoBehaviour
 
     private IEnumerator TempFixes()
     {
+        yield return new WaitForSeconds(m_numberPointToClimb*1.2f);
+        m_tummoAnimator.SetBool("isHanging", false);
         yield return new WaitForSeconds(3f);
         m_canClimb = false;
     }

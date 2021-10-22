@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
+using Random = UnityEngine.Random;
 
 public class ConduitBehavior : MonoBehaviour
 {
@@ -31,6 +32,9 @@ public class ConduitBehavior : MonoBehaviour
     [SerializeField] private float m_lerpFillingAmount;
     
     [SerializeField] private OpenPath[] m_bridgeToOpen;
+    
+    /// ANIMATIONS
+    [SerializeField] private Animator m_tummoAnimator;
 
     private void Start()
     {
@@ -48,6 +52,7 @@ public class ConduitBehavior : MonoBehaviour
         {
             if (!m_isActive && Input.GetKeyUp(KeyCode.R))
             {
+                m_tummoAnimator.SetBool("isUsing", true);
                 StartCoroutine(UpgradeEnemies());
                 m_isActive = true;
                 m_animator.Play("IvyGrow");
@@ -75,8 +80,9 @@ public class ConduitBehavior : MonoBehaviour
 
     private IEnumerator OpenPathCoroutine()
     {
+        yield return new WaitForSeconds(1.5f);
+        m_tummoAnimator.SetBool("isUsing", false);
         yield return new WaitForSeconds(m_delayToOpenPath);
-
         for (int i = 0; i < m_bridgeToOpen.Length; i++)
         {
             m_bridgeToOpen[i].OpenThePath();
@@ -104,6 +110,7 @@ public class ConduitBehavior : MonoBehaviour
         for (int i = 0; i < m_enemies.Length; i++)
         {
             m_enemies[i].GetComponent<EnemyBehavior>().LoadLevelAI(true);
+            yield return new WaitForSeconds(Random.Range(0.5f, 1f));
         }
     }
 }

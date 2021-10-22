@@ -8,6 +8,7 @@ public class EnemyBehavior : MonoBehaviour
     private GameObject m_playerRef;
     private Vector3 m_playerPos;
     private CharacterController m_charaController;
+    private ChangeView m_tummoCam;
     [SerializeField] private LayerMask m_playerMask;
     [SerializeField] private bool m_canChasePlayer;
     [SerializeField] private float m_hearTriggerDistance;
@@ -47,11 +48,17 @@ public class EnemyBehavior : MonoBehaviour
     private Vector3 targetMovePointVectorPosition;
     [SerializeField] private float m_distToContinue;
 
+
+    /// ANIMATIONS
+    [SerializeField] private Animator m_skeletonAnimator;
+    
+
     private void Start()
     {
         m_progress = 0;
         m_playerRef = GameObject.Find("Tummo");
         m_charaController = m_playerRef.GetComponent<CharacterController>();
+        m_tummoCam = m_playerRef.GetComponent<ChangeView>();
         m_enemyNavMesh = GetComponent<NavMeshAgent>();
         m_enemyNavMesh.speed = m_baseSpeed;
         m_progressMax = m_patrolPath.Length - 1;
@@ -64,6 +71,20 @@ public class EnemyBehavior : MonoBehaviour
         if (p_increaseAI)
         {
             m_aiLevel += 1;
+            if (m_aiLevel == 1)
+            {
+                m_skeletonAnimator.SetBool("isCrawling", true);
+            }
+            if (m_aiLevel == 2)
+            {
+                m_skeletonAnimator.SetBool("isCrawling", false);
+                m_skeletonAnimator.SetBool("isWalking", true);
+            }
+            if (m_aiLevel == 3)
+            {
+                m_skeletonAnimator.SetBool("isWalking", false);
+                m_skeletonAnimator.SetBool("isRunning", true);
+            }
         }
         
         m_isAlive = m_levelAI[m_aiLevel].m_isMoving;
@@ -101,6 +122,7 @@ public class EnemyBehavior : MonoBehaviour
         if (m_isQTEactive && m_canAttack)
         {
             m_charaController.enabled = false;
+            m_tummoCam.m_isHanged = true;
             m_enemyNavMesh.speed = 0;
         
             if (m_timeQTE < m_reftimeQTE)
@@ -113,6 +135,7 @@ public class EnemyBehavior : MonoBehaviour
                     {
                         m_isQTEactive = false;
                         m_charaController.enabled = true;
+                        m_tummoCam.m_isHanged = false;
                         StartCoroutine(AttackAgainDelay());
                     }
                 }
