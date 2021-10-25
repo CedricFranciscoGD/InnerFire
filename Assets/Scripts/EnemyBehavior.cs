@@ -57,7 +57,7 @@ public class EnemyBehavior : MonoBehaviour
     private void Start()
     {
         m_progress = 0;
-        m_playerRef = GameObject.Find("Tummo");
+        m_playerRef = GameObject.Find("p_Tummo");
         m_charaController = m_playerRef.GetComponent<CharacterController>();
         m_tummoCam = m_playerRef.GetComponent<ChangeView>();
         m_enemyNavMesh = GetComponent<NavMeshAgent>();
