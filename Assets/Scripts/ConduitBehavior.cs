@@ -38,7 +38,7 @@ public class ConduitBehavior : MonoBehaviour
 
     private void Start()
     {
-        m_playerRef = GameObject.Find("Tummo");
+        m_playerRef = GameObject.Find("p_Tummo");
         m_animator = GetComponent<Animator>();
         m_reanimZone.SetActive(false);
         m_growingZone = new Vector3(0, 0, 0);

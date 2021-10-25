@@ -25,7 +25,7 @@ public class ClimbPoint : MonoBehaviour
 
     private void Start()
     {
-        m_playerRef = GameObject.Find("Tummo");
+        m_playerRef = GameObject.Find("p_Tummo");
         m_charaController = m_playerRef.GetComponent<CharacterController>();
     }
 
@@ -38,8 +38,7 @@ public class ClimbPoint : MonoBehaviour
         {
             ClimbLerping();
         }
-
-        Debug.Log(m_canClimb);
+        
         Checking();
     }
 
