@@ -10,6 +10,10 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/EnemyBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/MountTo.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="ProjectId" id="1zrJwav45f6ID0I9jxVOulfayfN" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -54,6 +58,7 @@
       <updated>1634900515465</updated>
       <workItem from="1634900522485" duration="6148000" />
       <workItem from="1635145568421" duration="5866000" />
+      <workItem from="1635160133509" duration="11688000" />
     </task>
     <servers />
   </component>

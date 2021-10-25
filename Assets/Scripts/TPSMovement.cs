@@ -102,7 +102,7 @@ public class TPSMovement : MonoBehaviour
     IEnumerator Jump()
     {
         m_animator.SetBool("isJumping", true);
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(.7f);
         m_animator.SetBool("isJumping", false);
     }
 }
