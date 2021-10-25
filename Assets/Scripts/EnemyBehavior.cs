@@ -112,16 +112,19 @@ public class EnemyBehavior : MonoBehaviour
             }
             if (m_aiLevel == 2)
             {
-                m_skeletonAnimator.SetBool("isCrawling", false);
+                m_skeletonAnimator.SetBool("isCrawling", true);
                 m_skeletonAnimator.SetBool("isWalking", true);
             }
             if (m_aiLevel == 3)
             {
-                m_skeletonAnimator.SetBool("isWalking", false);
+                m_skeletonAnimator.SetBool("isCrawling", true);
+                m_skeletonAnimator.SetBool("isWalking", true);
                 m_skeletonAnimator.SetBool("isRunning", true);
             }
             if (m_aiLevel == 4)
             {
+                m_skeletonAnimator.SetBool("isCrawling", true);
+                m_skeletonAnimator.SetBool("isWalking", true);
                 m_skeletonAnimator.SetBool("isRunning", true);
                 m_canJump = true;
             }
