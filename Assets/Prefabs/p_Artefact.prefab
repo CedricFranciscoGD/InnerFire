@@ -205,7 +205,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Monolyth&Ivy1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2441978258687281150, guid: a2d1642f4c2242941991a2f4bf44bc53, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a2d1642f4c2242941991a2f4bf44bc53, type: 3}
 --- !u!1 &6653150499479456567 stripped
 GameObject:

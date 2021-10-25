@@ -92,9 +92,6 @@ public class EnemyBehavior : MonoBehaviour
         m_isAlive = m_levelAI[m_aiLevel].m_isMoving;
         m_baseSpeed = m_levelAI[m_aiLevel].m_speed;
         m_ChaseSpeed = m_levelAI[m_aiLevel].m_chaseSpeed;
-        m_stepHeight = m_levelAI[m_aiLevel].m_stepHeight;
-        m_dropHeight = m_levelAI[m_aiLevel].m_dropHeight;
-        m_jumpLength = m_levelAI[m_aiLevel].m_jumpLength;
 
         m_enemyNavMesh.speed = m_baseSpeed;
     }
@@ -203,11 +200,9 @@ public class EnemyBehavior : MonoBehaviour
     private void MoveOnPath()
     {
         float distToWaypoint = Vector3.Distance(transform.position, m_patrolPath[m_progress].position);
-        Debug.Log(distToWaypoint);
-        
+
         if (distToWaypoint < m_distToContinue)
         {
-            Debug.Log("PROC");
             if (m_progress < m_progressMax)
             {
                 m_progress += 1;

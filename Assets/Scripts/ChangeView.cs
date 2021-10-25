@@ -13,7 +13,7 @@ public class ChangeView : MonoBehaviour
     public bool m_isHanged = false;
 
     [SerializeField] private int m_keyPressTime = 0;
-    
+
     private void Update()
     {
         if (!m_isHanged) return;

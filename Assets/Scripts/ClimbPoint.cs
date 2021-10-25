@@ -38,8 +38,7 @@ public class ClimbPoint : MonoBehaviour
         {
             ClimbLerping();
         }
-
-        Debug.Log(m_canClimb);
+        
         Checking();
     }
 

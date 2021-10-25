@@ -14,7 +14,7 @@ GameObject:
   m_Layer: 3
   m_Name: p_EnemySkeleton
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -71,7 +71,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   m_canChasePlayer: 1
-  m_hearTriggerDistance: 30
+  m_hearTriggerDistance: 15
   m_visionTriggerDistance: 10
   m_attackTriggerDistance: 1.5
   m_timeToAttackAgain: 5
@@ -79,6 +79,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c0af3bc8b23cabc4f86adfdddeb0d6dc, type: 2}
   - {fileID: 11400000, guid: 31c7f799a55099644bbdcc31cccb2ec4, type: 2}
   - {fileID: 11400000, guid: b39fc76a99c4596408377ce2192e18d9, type: 2}
+  - {fileID: 11400000, guid: 4603671b99e5d2849bee8d21e8aba79d, type: 2}
   m_isAlive: 0
   m_baseSpeed: 0.7
   m_ChaseSpeed: 1.5
