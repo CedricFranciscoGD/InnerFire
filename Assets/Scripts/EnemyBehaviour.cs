@@ -52,6 +52,7 @@ public class EnemyBehaviour : MonoBehaviour
         transform.LookAt(new Vector3(m_target.position.x, transform.position.y, m_target.position.z));
         if (Vector3.Distance(m_target.position, transform.position) < .5f)
         {
+            m_skeletonAnimator.SetBool("isAttacking", true);
             Debug.Log("Tummo s'est fait atrrapée");
         }
         else
