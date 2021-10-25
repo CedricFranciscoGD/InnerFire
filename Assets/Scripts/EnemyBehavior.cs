@@ -1,16 +1,24 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class EnemyBehavior : MonoBehaviour
 {
+    //__________________________________________
+    // JUSTE POUR LE GYM
+    [SerializeField] private bool m_isGym;
+    [SerializeField] private bool m_canJump;
+    [SerializeField] private bool m_canChasePlayer;
+    //__________________________________________
+    
+    
     [Header("Player & chasing parameters")]
     private GameObject m_playerRef;
     private Vector3 m_playerPos;
     private CharacterController m_charaController;
     private ChangeView m_tummoCam;
     [SerializeField] private LayerMask m_playerMask;
-    [SerializeField] private bool m_canChasePlayer;
     [SerializeField] private float m_hearTriggerDistance;
     [SerializeField] private float m_visionTriggerDistance;
     [SerializeField] private float m_attackTriggerDistance;
@@ -29,7 +37,7 @@ public class EnemyBehavior : MonoBehaviour
     [Header("Enemy ressources")]
     private NavMeshAgent m_enemyNavMesh;
     [SerializeField] private AI_levelsSO[] m_levelAI;
-    private int m_aiLevel = 0;
+    [SerializeField] private int m_aiLevel = 0;
     [SerializeField] private bool m_isAlive = false;
     [SerializeField] private float m_baseSpeed;
     [SerializeField] private float m_ChaseSpeed;
@@ -62,8 +70,35 @@ public class EnemyBehavior : MonoBehaviour
         m_enemyNavMesh = GetComponent<NavMeshAgent>();
         m_enemyNavMesh.speed = m_baseSpeed;
         m_progressMax = m_patrolPath.Length - 1;
-
+        
         LoadLevelAI(false);
+        
+        // GYM PART
+        if (m_isGym)
+        {
+            if (m_aiLevel == 1)
+            {
+                m_skeletonAnimator.SetBool("isCrawling", true);
+            }
+            if (m_aiLevel == 2)
+            {
+                m_skeletonAnimator.SetBool("isCrawling", true);
+                m_skeletonAnimator.SetBool("isWalking", true);
+            }
+            if (m_aiLevel == 3)
+            {
+                m_skeletonAnimator.SetBool("isCrawling", true);
+                m_skeletonAnimator.SetBool("isWalking", true);
+                m_skeletonAnimator.SetBool("isRunning", true);
+            }
+            if (m_aiLevel == 4)
+            {
+                m_skeletonAnimator.SetBool("isCrawling", true);
+                m_skeletonAnimator.SetBool("isWalking", true);
+                m_skeletonAnimator.SetBool("isRunning", true);
+                m_canJump = true;
+            }
+        }
     }
     
     public void LoadLevelAI(bool p_increaseAI)
@@ -85,6 +120,12 @@ public class EnemyBehavior : MonoBehaviour
                 m_skeletonAnimator.SetBool("isWalking", false);
                 m_skeletonAnimator.SetBool("isRunning", true);
             }
+            if (m_aiLevel == 4)
+            {
+                m_skeletonAnimator.SetBool("isRunning", true);
+                m_canJump = true;
+            }
+            
         }
         
         m_isAlive = m_levelAI[m_aiLevel].m_isMoving;
@@ -95,6 +136,12 @@ public class EnemyBehavior : MonoBehaviour
         m_jumpLength = m_levelAI[m_aiLevel].m_jumpLength;
 
         m_enemyNavMesh.speed = m_baseSpeed;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (!m_canJump) return;
+        else m_skeletonAnimator.SetBool("isJumping", true);
     }
 
     private void Update()
@@ -149,6 +196,33 @@ public class EnemyBehavior : MonoBehaviour
                 StartCoroutine(AttackAgainDelay());
             }
         }
+
+        if (m_isGym)
+        {
+            if (m_aiLevel == 1)
+            {
+                m_skeletonAnimator.SetBool("isCrawling", true);
+            }
+            if (m_aiLevel == 2)
+            {
+                m_skeletonAnimator.SetBool("isCrawling", true);
+                m_skeletonAnimator.SetBool("isWalking", true);
+            }
+            if (m_aiLevel == 3)
+            {
+                m_skeletonAnimator.SetBool("isCrawling", true);
+                m_skeletonAnimator.SetBool("isWalking", true);
+                m_skeletonAnimator.SetBool("isRunning", true);
+            }
+            if (m_aiLevel == 4)
+            {
+                m_skeletonAnimator.SetBool("isCrawling", true);
+                m_skeletonAnimator.SetBool("isWalking", true);
+                m_skeletonAnimator.SetBool("isRunning", true);
+                m_skeletonAnimator.SetBool("isJumping", true);
+            }
+        }
+        else return;
         
     }
 
@@ -200,7 +274,6 @@ public class EnemyBehavior : MonoBehaviour
     private void MoveOnPath()
     {
         float distToWaypoint = Vector3.Distance(transform.position, m_patrolPath[m_progress].position);
-        Debug.Log(distToWaypoint);
         
         if (distToWaypoint < m_distToContinue)
         {
@@ -208,6 +281,8 @@ public class EnemyBehavior : MonoBehaviour
             if (m_progress < m_progressMax)
             {
                 m_progress += 1;
+                if(m_isGym && m_aiLevel < 5) m_aiLevel += 1;
+                else if(m_isGym && m_aiLevel == 5) return;
             }
             else
             {
