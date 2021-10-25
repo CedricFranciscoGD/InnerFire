@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -10,8 +11,6 @@ public class EnemyBehaviour : MonoBehaviour
     [SerializeField] private float m_speed;
     [SerializeField] private bool m_isMounting;
     private Rigidbody m_rb;
-    public GameObject m_obstacleMount;
-    private MountTo m_mountTo;
 
     private Vector3 m_jumpForce;
 
@@ -26,34 +25,19 @@ public class EnemyBehaviour : MonoBehaviour
         m_skeletonAnimator.SetBool("isCrawling", true);
         m_skeletonAnimator.SetBool("isWalking", true);
         m_skeletonAnimator.SetBool("isRunning", true);
-
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("MountArea"))
         {
-            Debug.Log("Can Mount");
             m_isMounting = true;
-            m_obstacleMount = other.gameObject;
-            m_mountTo = m_obstacleMount.GetComponent<MountTo>();
-            m_rb.useGravity = false;
-            MountObstacle();
-        }
-        if (other.CompareTag("TargetPoint"))
-        {
-            m_isMounting = false;
         }
     }
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("TargetPoint"))
-        {
-            m_rb.useGravity = true;
-        }
         if (other.CompareTag("MountArea"))
         {
-            m_rb.useGravity = true;
             m_isMounting = false;
         }
     }
@@ -62,20 +46,28 @@ public class EnemyBehaviour : MonoBehaviour
     {
         if (m_isMounting)
         {
-            m_rb.velocity = new  Vector3(0,3,0 );
-            m_speed = 15;
-            m_skeletonAnimator.SetBool("isJumping", true);
+            StartCoroutine(Jump());
         }
-        else m_skeletonAnimator.SetBool("isJumping", false);
-        Vector3 pos = Vector3.MoveTowards(transform.position, m_target.position, m_speed * Time.deltaTime);
-        m_rb.MovePosition(pos);
-        transform.LookAt(new Vector3(m_target.position.x, 0, m_target.position.z));
+        //transform.LookAt(new Vector3(m_target.position.x, 0, m_target.position.z));
+        transform.LookAt(new Vector3(m_target.position.x, transform.position.y, m_target.position.z));
+        if (Vector3.Distance(m_target.position, transform.position) < .5f)
+        {
+            Debug.Log("Tummo s'est fait atrrapée");
+        }
+        else
+        {
+            Vector3 pos = Vector3.MoveTowards(transform.position, m_target.position, m_speed * Time.deltaTime);
+            m_rb.MovePosition(pos);
+        }
     }
 
-    private void MountObstacle()
+    IEnumerator Jump()
     {
-        if (!m_isMounting) return;
-        Vector3 mount = Vector3.Lerp(transform.position, m_mountTo.m_pointToLerp.position, m_speed * Time.deltaTime);
-        m_rb.MovePosition(mount);
+        m_rb.velocity = new  Vector3(0,3.5f,0 );
+        m_speed = 15;
+        m_skeletonAnimator.SetBool("isJumping", true);
+        yield return new WaitForSeconds(1);
+        m_speed = 4;
+        m_skeletonAnimator.SetBool("isJumping", false);
     }
 }
