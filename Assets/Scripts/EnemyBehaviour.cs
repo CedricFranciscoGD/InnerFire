@@ -5,7 +5,6 @@ using Random = UnityEngine.Random;
 
 public class EnemyBehaviour : MonoBehaviour
 {
-    // TODO: Make this script looking into the player list to allow IA follow a random player on the game
     
     [SerializeField] private Transform m_target;
     [SerializeField] private float m_speed;
@@ -13,10 +12,8 @@ public class EnemyBehaviour : MonoBehaviour
     [SerializeField] private bool m_canAttack;
     private Rigidbody m_rb;
 
-    private Vector3 m_jumpForce;
 
     private Animator m_skeletonAnimator;
-    [SerializeField] private bool m_isAttacking;
     [SerializeField] private ChangeView m_changeView;
 
     void Start()
@@ -49,7 +46,6 @@ public class EnemyBehaviour : MonoBehaviour
         {
             StartCoroutine(Jump());
         }
-        //transform.LookAt(new Vector3(m_target.position.x, 0, m_target.position.z));
         transform.LookAt(new Vector3(m_target.position.x, transform.position.y, m_target.position.z));
         if (Vector3.Distance(m_target.position, transform.position) < 1.3f)
         {
@@ -61,7 +57,6 @@ public class EnemyBehaviour : MonoBehaviour
         }
         else
         {
-            m_isAttacking = false;
             Vector3 pos = Vector3.MoveTowards(transform.position, m_target.position, m_speed * Time.deltaTime);
             m_rb.MovePosition(pos);
             m_skeletonAnimator.SetBool("isAttacking", false);

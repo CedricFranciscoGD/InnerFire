@@ -24,7 +24,7 @@ public class ChangeView : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.X))
         {
             m_keyPressTime++;
-            if (m_keyPressTime >= 3 && m_isHanged)
+            if (m_keyPressTime >= 2 && m_isHanged)
             {
                 m_tpsMovement.enabled = true;
                 Debug.Log("Vous vous échappez avec succès");

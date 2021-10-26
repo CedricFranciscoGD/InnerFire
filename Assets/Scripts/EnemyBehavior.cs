@@ -8,7 +8,6 @@ public class EnemyBehavior : MonoBehaviour
     //__________________________________________
     // JUSTE POUR LA GYM
     [SerializeField] private bool m_isGym;
-    [SerializeField] private bool m_canJump;
     [SerializeField] private bool m_canChasePlayer;
     //__________________________________________
     
@@ -16,7 +15,6 @@ public class EnemyBehavior : MonoBehaviour
     [Header("Player & chasing parameters")]
     private GameObject m_playerRef;
     private Vector3 m_playerPos;
-    private CharacterController m_charaController;
     private ChangeView m_tummoCam;
     [SerializeField] private LayerMask m_playerMask;
     [SerializeField] private float m_hearTriggerDistance;
@@ -24,7 +22,7 @@ public class EnemyBehavior : MonoBehaviour
     [SerializeField] private float m_attackTriggerDistance;
     [SerializeField] private float m_timeToAttackAgain;
     private bool m_canAttack = true;
-    private bool m_isChasing = false;
+    [SerializeField] private bool m_isChasing;
     private bool m_eyeContact = false;
 
     //QTE to change
@@ -60,44 +58,39 @@ public class EnemyBehavior : MonoBehaviour
     /// ANIMATIONS
     [SerializeField] private Animator m_skeletonAnimator;
     
+    
+    //_________________________________________________________
+    // NEW AI SETTINGS
+    
+    [SerializeField] private Transform m_target;
+    [SerializeField] private bool m_canJump = false;
+    [SerializeField] private bool m_isMounting;
+    private Rigidbody m_rb;
+
+    [SerializeField] private ChangeView m_changeView;
+
+    [SerializeField] private bool m_navMeshOn = true;
+    //_________________________________________________________
+    
 
     private void Start()
     {
         m_progress = 0;
         m_playerRef = GameObject.Find("p_Tummo");
-        m_charaController = m_playerRef.GetComponent<CharacterController>();
+        m_rb = GetComponent<Rigidbody>();
         m_tummoCam = m_playerRef.GetComponent<ChangeView>();
         m_enemyNavMesh = GetComponent<NavMeshAgent>();
         m_enemyNavMesh.speed = m_baseSpeed;
         m_progressMax = m_patrolPath.Length - 1;
         
         LoadLevelAI(false);
-        
-        // GYM PART
-        if (m_isGym)
+    }
+    
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("MountArea"))
         {
-            if (m_aiLevel == 1)
-            {
-                m_skeletonAnimator.SetBool("isCrawling", true);
-            }
-            if (m_aiLevel == 2)
-            {
-                m_skeletonAnimator.SetBool("isCrawling", true);
-                m_skeletonAnimator.SetBool("isWalking", true);
-            }
-            if (m_aiLevel == 3)
-            {
-                m_skeletonAnimator.SetBool("isCrawling", true);
-                m_skeletonAnimator.SetBool("isWalking", true);
-                m_skeletonAnimator.SetBool("isRunning", true);
-            }
-            if (m_aiLevel == 4)
-            {
-                m_skeletonAnimator.SetBool("isCrawling", true);
-                m_skeletonAnimator.SetBool("isWalking", true);
-                m_skeletonAnimator.SetBool("isRunning", true);
-                m_canJump = true;
-            }
+            StartCoroutine(Jump());
         }
     }
     
@@ -141,15 +134,14 @@ public class EnemyBehavior : MonoBehaviour
         m_enemyNavMesh.speed = m_baseSpeed;
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (!m_canJump) return;
-        else m_skeletonAnimator.SetBool("isJumping", true);
-    }
-
     private void Update()
     {
         //Debug.Log(m_aiLevel);
+        if (m_isMounting)
+        {
+            StartCoroutine(Jump());
+        }
+        transform.LookAt(new Vector3(m_target.position.x, transform.position.y, m_target.position.z));
         
         if (m_isAlive)
         {
@@ -159,21 +151,30 @@ public class EnemyBehavior : MonoBehaviour
             VisionDetect();
             AttackUpdate();
 
-            if (!m_isChasing)
+            if (!m_navMeshOn)
+            {
+                Vector3 pos = Vector3.MoveTowards(transform.position, m_target.position, m_baseSpeed * Time.deltaTime);
+                m_rb.MovePosition(pos);
+            }
+            if (!m_isChasing && m_navMeshOn)
             {
                 MoveOnPath();
             }
             else
             {
-                m_enemyNavMesh.SetDestination(m_playerPos);
+                if(m_navMeshOn && !m_isChasing)
+                { 
+                    MoveOnPath();
+                    m_enemyNavMesh.SetDestination(m_playerPos);
+                }
             }
         }
 
         if (m_isQTEactive && m_canAttack)
         {
-            m_charaController.enabled = false;
             m_tummoCam.m_isHanged = true;
             m_enemyNavMesh.speed = 0;
+            m_skeletonAnimator.SetBool("isAttacking", true);
         
             if (m_timeQTE < m_reftimeQTE)
             {
@@ -184,7 +185,6 @@ public class EnemyBehavior : MonoBehaviour
                     if (m_counterQTE > m_refCounterQTE)
                     {
                         m_isQTEactive = false;
-                        m_charaController.enabled = true;
                         m_tummoCam.m_isHanged = false;
                         StartCoroutine(AttackAgainDelay());
                     }
@@ -195,11 +195,14 @@ public class EnemyBehavior : MonoBehaviour
                 m_isQTEactive = false;
                 m_timeQTE = 0;
                 m_counterQTE = 0;
-                m_charaController.enabled = true;
                 StartCoroutine(AttackAgainDelay());
             }
         }
-
+        if (!m_enemyNavMesh.isActiveAndEnabled)
+        {
+            m_navMeshOn = false;
+            return;
+        }
         if (m_isGym)
         {
             if (m_aiLevel == 1)
@@ -210,23 +213,41 @@ public class EnemyBehavior : MonoBehaviour
             {
                 m_skeletonAnimator.SetBool("isCrawling", true);
                 m_skeletonAnimator.SetBool("isWalking", true);
+                m_canJump = true;
             }
             if (m_aiLevel == 3)
             {
                 m_skeletonAnimator.SetBool("isCrawling", true);
                 m_skeletonAnimator.SetBool("isWalking", true);
                 m_skeletonAnimator.SetBool("isRunning", true);
+                m_canJump = true;
             }
             if (m_aiLevel == 4)
             {
                 m_skeletonAnimator.SetBool("isCrawling", true);
                 m_skeletonAnimator.SetBool("isWalking", true);
                 m_skeletonAnimator.SetBool("isRunning", true);
-                m_skeletonAnimator.SetBool("isJumping", true);
+                m_canJump = true;
             }
         }
         else return;
         
+    }
+    
+    IEnumerator Jump()
+    {
+        m_enemyNavMesh.enabled = false;
+        m_navMeshOn = false;
+        m_isMounting = true;
+        m_rb.velocity = new Vector3(0,3f,0 );
+        m_baseSpeed = 10;
+        m_skeletonAnimator.SetBool("isJumping", true);
+        yield return new WaitForSeconds(1);
+        m_baseSpeed = 5;
+        m_skeletonAnimator.SetBool("isJumping", false);
+        m_isMounting = false;
+        m_enemyNavMesh.enabled = true;
+        m_navMeshOn = true;
     }
 
     private IEnumerator AttackAgainDelay()
@@ -245,6 +266,7 @@ public class EnemyBehavior : MonoBehaviour
         else
         {
             m_isQTEactive = false;
+            m_skeletonAnimator.SetBool("isAttacking", false);
         }
     }
 
