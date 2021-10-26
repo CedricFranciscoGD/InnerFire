@@ -64,8 +64,8 @@ public class EnemyBehaviour : MonoBehaviour
 
     IEnumerator Jump()
     {
-        m_rb.velocity = new  Vector3(0,3.5f,0 );
-        m_speed = 15;
+        m_rb.velocity = new Vector3(0,3f,0 );
+        m_speed = 10;
         m_skeletonAnimator.SetBool("isJumping", true);
         yield return new WaitForSeconds(1);
         m_speed = 4;
