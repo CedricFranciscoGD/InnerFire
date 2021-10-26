@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class EnemyBehavior : MonoBehaviour
 {
     //__________________________________________
-    // JUSTE POUR LE GYM
+    // JUSTE POUR LA GYM
     [SerializeField] private bool m_isGym;
     [SerializeField] private bool m_canJump;
     [SerializeField] private bool m_canChasePlayer;
