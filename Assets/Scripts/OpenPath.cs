@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class OpenPath : MonoBehaviour
 {
+    [SerializeField] private bool m_needNavMeshObstacle;
+    [SerializeField] private GameObject m_navMeshObstacleGO;
     [SerializeField] private GameObject m_finalPosRefGO;
     private bool m_isLerping = false;
     private float m_timeElapsed = 0;
@@ -26,6 +28,7 @@ public class OpenPath : MonoBehaviour
                 m_isLerping = false;
                 m_timeElapsed = 0;
                 m_finalPosRefGO.SetActive(false);
+                Destroy(m_navMeshObstacleGO);
             }
             
         }

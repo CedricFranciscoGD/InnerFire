@@ -24,7 +24,7 @@ public class EnemyBehavior : MonoBehaviour
     [SerializeField] private float m_attackTriggerDistance;
     [SerializeField] private float m_timeToAttackAgain;
     private bool m_canAttack = true;
-    private bool m_isChasing = false;
+    private bool m_isChasing = true;
     private bool m_eyeContact = false;
 
     //QTE to change
@@ -41,9 +41,6 @@ public class EnemyBehavior : MonoBehaviour
     [SerializeField] private bool m_isAlive = false;
     [SerializeField] private float m_baseSpeed;
     [SerializeField] private float m_ChaseSpeed;
-    [SerializeField] private float m_stepHeight;
-    [SerializeField] private float m_dropHeight;
-    [SerializeField] private float m_jumpLength;
 
     [Header("Raycast")]
     private RaycastHit m_rayHit;
@@ -55,12 +52,10 @@ public class EnemyBehavior : MonoBehaviour
     private int m_progressMax;
     private Vector3 targetMovePointVectorPosition;
     [SerializeField] private float m_distToContinue;
-
-
+    
     /// ANIMATIONS
     [SerializeField] private Animator m_skeletonAnimator;
     
-
     private void Start()
     {
         m_progress = 0;
@@ -71,7 +66,7 @@ public class EnemyBehavior : MonoBehaviour
         m_enemyNavMesh.speed = m_baseSpeed;
         m_progressMax = m_patrolPath.Length - 1;
         
-        LoadLevelAI(false);
+        LoadLevelAI(false, 0);
         
         // GYM PART
         if (m_isGym)
@@ -101,11 +96,12 @@ public class EnemyBehavior : MonoBehaviour
         }
     }
     
-    public void LoadLevelAI(bool p_increaseAI)
+    public void LoadLevelAI(bool p_increaseAI, int p_levelAItoload)
     {
         if (p_increaseAI)
         {
-            m_aiLevel += 1;
+            m_aiLevel = p_levelAItoload;
+            
             if (m_aiLevel == 1)
             {
                 m_skeletonAnimator.SetBool("isCrawling", true);
@@ -129,16 +125,12 @@ public class EnemyBehavior : MonoBehaviour
                 m_canJump = true;
             }
             
-        }
-        
-        m_isAlive = m_levelAI[m_aiLevel].m_isMoving;
-        m_baseSpeed = m_levelAI[m_aiLevel].m_speed;
-        m_ChaseSpeed = m_levelAI[m_aiLevel].m_chaseSpeed;
-        m_stepHeight = m_levelAI[m_aiLevel].m_stepHeight;
-        m_dropHeight = m_levelAI[m_aiLevel].m_dropHeight;
-        m_jumpLength = m_levelAI[m_aiLevel].m_jumpLength;
+            m_isAlive = m_levelAI[m_aiLevel].m_isMoving;
+            m_baseSpeed = m_levelAI[m_aiLevel].m_speed;
+            m_ChaseSpeed = m_levelAI[m_aiLevel].m_chaseSpeed;
 
-        m_enemyNavMesh.speed = m_baseSpeed;
+            m_enemyNavMesh.speed = m_baseSpeed;
+        }
     }
 
     private void OnTriggerEnter(Collider other)

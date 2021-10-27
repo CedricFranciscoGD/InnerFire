@@ -189,6 +189,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d9f70c8c2046fe4eba935b0cf967af2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_needNavMeshObstacle: 0
+  m_navMeshObstacleGO: {fileID: 0}
   m_finalPosRefGO: {fileID: 4342329925480035716}
   m_lerpLength: 5
   m_lerpFillingAmount: 85
@@ -217,7 +219,7 @@ Transform:
   m_GameObject: {fileID: 4342329926493000416}
   m_LocalRotation: {x: -0, y: -0.19918092, z: -0, w: 0.97996277}
   m_LocalPosition: {x: 11.637, y: 4.7379217, z: -4.4287}
-  m_LocalScale: {x: 1, y: 1, z: 1.1895}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4342329925830928501}
   - {fileID: 4342329925480035717}
