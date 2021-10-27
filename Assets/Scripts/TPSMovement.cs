@@ -86,7 +86,7 @@ public class TPSMovement : MonoBehaviour
         //JUMP
         if (Input.GetButtonDown("Jump") && m_isOnGround)
         {
-            Debug.Log("Is Jumping");
+            //Debug.Log("Is Jumping");
             m_VectorVelocity.y = Mathf.Sqrt(m_jumpHeight * -2f * m_gravity);
             StartCoroutine(Jump());
         }

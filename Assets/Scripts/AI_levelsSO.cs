@@ -8,7 +8,4 @@ public class AI_levelsSO : ScriptableObject
     public bool m_isMoving;
     public float m_speed;
     public float m_chaseSpeed;
-    public float m_stepHeight;
-    public float m_dropHeight;
-    public float m_jumpLength;
 }
