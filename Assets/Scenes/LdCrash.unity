@@ -2111,6 +2111,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d9f70c8c2046fe4eba935b0cf967af2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_needNavMeshObstacle: 0
+  m_navMeshObstacleGO: {fileID: 0}
   m_finalPosRefGO: {fileID: 0}
   m_lerpLength: 5
   m_lerpFillingAmount: 85
@@ -5295,11 +5297,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 541892121272692179, guid: 4f40db0a33578ba44ad4777aa89de289, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.63051206
+      value: 0.630512
       objectReference: {fileID: 0}
     - target: {fileID: 541892121272692179, guid: 4f40db0a33578ba44ad4777aa89de289, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.00034918427
+      value: 0.0003491855
       objectReference: {fileID: 0}
     - target: {fileID: 541892121272692179, guid: 4f40db0a33578ba44ad4777aa89de289, type: 3}
       propertyPath: m_LocalRotation.y
@@ -5307,7 +5309,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 541892121272692179, guid: 4f40db0a33578ba44ad4777aa89de289, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0004298564
+      value: -0.000429858
       objectReference: {fileID: 0}
     - target: {fileID: 541892121689640575, guid: 4f40db0a33578ba44ad4777aa89de289, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6410,6 +6412,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d9f70c8c2046fe4eba935b0cf967af2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_needNavMeshObstacle: 0
+  m_navMeshObstacleGO: {fileID: 0}
   m_finalPosRefGO: {fileID: 24559894}
   m_lerpLength: 5
   m_lerpFillingAmount: 85
@@ -7416,6 +7420,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d9f70c8c2046fe4eba935b0cf967af2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_needNavMeshObstacle: 0
+  m_navMeshObstacleGO: {fileID: 0}
   m_finalPosRefGO: {fileID: 556047586}
   m_lerpLength: 5
   m_lerpFillingAmount: 85
@@ -8639,6 +8645,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d9f70c8c2046fe4eba935b0cf967af2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_needNavMeshObstacle: 0
+  m_navMeshObstacleGO: {fileID: 0}
   m_finalPosRefGO: {fileID: 1022479295}
   m_lerpLength: 5
   m_lerpFillingAmount: 85
