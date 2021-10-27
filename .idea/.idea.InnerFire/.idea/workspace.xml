@@ -15,6 +15,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/EnemyBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/EnemyBNotWork.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/RingBehavior.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="1zrJwav45f6ID0I9jxVOulfayfN" />
@@ -66,7 +67,7 @@
       <workItem from="1634900522485" duration="5275000" />
       <workItem from="1634913736725" duration="1084000" />
       <workItem from="1635242655449" duration="16387000" />
-      <workItem from="1635322711774" duration="633000" />
+      <workItem from="1635322711774" duration="1233000" />
     </task>
     <servers />
   </component>
