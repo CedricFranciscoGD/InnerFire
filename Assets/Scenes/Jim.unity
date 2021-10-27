@@ -1435,6 +1435,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_isGym: 1
+  m_canJump: 0
   m_canChasePlayer: 1
   m_playerMask:
     serializedVersion: 2
@@ -1443,7 +1444,6 @@ MonoBehaviour:
   m_visionTriggerDistance: 10
   m_attackTriggerDistance: 1.5
   m_timeToAttackAgain: 5
-  m_isChasing: 0
   m_levelAI:
   - {fileID: 11400000, guid: c0af3bc8b23cabc4f86adfdddeb0d6dc, type: 2}
   - {fileID: 11400000, guid: 31c7f799a55099644bbdcc31cccb2ec4, type: 2}
@@ -1463,11 +1463,6 @@ MonoBehaviour:
   - {fileID: 2071966783}
   m_distToContinue: 1
   m_skeletonAnimator: {fileID: 1949892502}
-  m_target: {fileID: 853635259}
-  m_canJump: 0
-  m_isMounting: 0
-  m_changeView: {fileID: 824515601}
-  m_navMeshOn: 1
 --- !u!195 &294658349
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -2596,7 +2591,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 541892120872143890, guid: 4f40db0a33578ba44ad4777aa89de289, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.009012423
+      value: 0.00901242
       objectReference: {fileID: 0}
     - target: {fileID: 541892120872143890, guid: 4f40db0a33578ba44ad4777aa89de289, type: 3}
       propertyPath: m_LocalRotation.y
@@ -2604,15 +2599,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 541892120872143890, guid: 4f40db0a33578ba44ad4777aa89de289, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0009398381
+      value: 0.00093983684
       objectReference: {fileID: 0}
     - target: {fileID: 541892120889207867, guid: 4f40db0a33578ba44ad4777aa89de289, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.103701524
+      value: 0.10370149
       objectReference: {fileID: 0}
     - target: {fileID: 541892120889207867, guid: 4f40db0a33578ba44ad4777aa89de289, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.0017994295
+      value: -0.0017994285
       objectReference: {fileID: 0}
     - target: {fileID: 541892120889207867, guid: 4f40db0a33578ba44ad4777aa89de289, type: 3}
       propertyPath: m_LocalRotation.y
@@ -2620,15 +2615,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 541892120889207867, guid: 4f40db0a33578ba44ad4777aa89de289, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.01725583
+      value: 0.017255828
       objectReference: {fileID: 0}
     - target: {fileID: 541892121272692179, guid: 4f40db0a33578ba44ad4777aa89de289, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.10371706
+      value: 0.103717096
       objectReference: {fileID: 0}
     - target: {fileID: 541892121272692179, guid: 4f40db0a33578ba44ad4777aa89de289, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.00008216319
+      value: 0.00008216343
       objectReference: {fileID: 0}
     - target: {fileID: 541892121272692179, guid: 4f40db0a33578ba44ad4777aa89de289, type: 3}
       propertyPath: m_LocalRotation.y
@@ -2636,7 +2631,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 541892121272692179, guid: 4f40db0a33578ba44ad4777aa89de289, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.00078791333
+      value: -0.0007879154
       objectReference: {fileID: 0}
     - target: {fileID: 541892121689640575, guid: 4f40db0a33578ba44ad4777aa89de289, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2904,11 +2899,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 676064871}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!95 &736158568 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 6519547046462017487, guid: d7377cd057679cb4a96a40cb562fc7d1, type: 3}
-  m_PrefabInstance: {fileID: 595275390}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &758382184
 GameObject:
   m_ObjectHideFlags: 0
@@ -3541,6 +3531,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_isGym: 1
+  m_canJump: 0
   m_canChasePlayer: 1
   m_playerMask:
     serializedVersion: 2
@@ -3549,7 +3540,6 @@ MonoBehaviour:
   m_visionTriggerDistance: 10
   m_attackTriggerDistance: 1.5
   m_timeToAttackAgain: 5
-  m_isChasing: 0
   m_levelAI:
   - {fileID: 11400000, guid: c0af3bc8b23cabc4f86adfdddeb0d6dc, type: 2}
   - {fileID: 11400000, guid: 31c7f799a55099644bbdcc31cccb2ec4, type: 2}
@@ -3569,11 +3559,6 @@ MonoBehaviour:
   - {fileID: 204996739}
   m_distToContinue: 1
   m_skeletonAnimator: {fileID: 1622158824}
-  m_target: {fileID: 853635259}
-  m_canJump: 0
-  m_isMounting: 0
-  m_changeView: {fileID: 824515601}
-  m_navMeshOn: 1
 --- !u!195 &986079684
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -3673,6 +3658,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_isGym: 1
+  m_canJump: 0
   m_canChasePlayer: 1
   m_playerMask:
     serializedVersion: 2
@@ -3681,7 +3667,6 @@ MonoBehaviour:
   m_visionTriggerDistance: 10
   m_attackTriggerDistance: 1.5
   m_timeToAttackAgain: 5
-  m_isChasing: 0
   m_levelAI:
   - {fileID: 11400000, guid: c0af3bc8b23cabc4f86adfdddeb0d6dc, type: 2}
   - {fileID: 11400000, guid: 31c7f799a55099644bbdcc31cccb2ec4, type: 2}
@@ -3701,11 +3686,6 @@ MonoBehaviour:
   - {fileID: 1967277533}
   m_distToContinue: 1
   m_skeletonAnimator: {fileID: 1721133289}
-  m_target: {fileID: 853635259}
-  m_canJump: 0
-  m_isMounting: 0
-  m_changeView: {fileID: 824515601}
-  m_navMeshOn: 1
 --- !u!195 &1022047050
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -8774,7 +8754,6 @@ GameObject:
   - component: {fileID: 2102702660}
   - component: {fileID: 2102702662}
   - component: {fileID: 2102702663}
-  - component: {fileID: 2102702664}
   - component: {fileID: 2102702661}
   m_Layer: 3
   m_Name: "IA C\xE9dric"
@@ -8791,7 +8770,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2102702659}
   m_LocalRotation: {x: -0, y: -1, z: -0, w: 0.0000029504295}
-  m_LocalPosition: {x: -24.96, y: 0, z: -45.27}
+  m_LocalPosition: {x: -32.34, y: 0, z: -41.75}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1332474793}
@@ -8807,43 +8786,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 2102702659}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8634205a672a8ea4bbcfa16d31c33a7d, type: 3}
+  m_Script: {fileID: 11500000, guid: 902dbb678ac129741850174d335243db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_isGym: 1
-  m_canChasePlayer: 1
-  m_playerMask:
-    serializedVersion: 2
-    m_Bits: 8
-  m_hearTriggerDistance: 4
-  m_visionTriggerDistance: 10
-  m_attackTriggerDistance: 1.5
-  m_timeToAttackAgain: 5
-  m_isChasing: 0
-  m_levelAI:
-  - {fileID: 11400000, guid: c0af3bc8b23cabc4f86adfdddeb0d6dc, type: 2}
-  - {fileID: 11400000, guid: 31c7f799a55099644bbdcc31cccb2ec4, type: 2}
-  - {fileID: 11400000, guid: b39fc76a99c4596408377ce2192e18d9, type: 2}
-  - {fileID: 11400000, guid: 4603671b99e5d2849bee8d21e8aba79d, type: 2}
-  - {fileID: 11400000, guid: e882f39c8b943e4448a244698fa49d8a, type: 2}
-  m_aiLevel: 1
-  m_isAlive: 0
-  m_baseSpeed: 0.7
-  m_ChaseSpeed: 1.5
-  m_stepHeight: 0
-  m_dropHeight: 0
-  m_jumpLength: 0
-  m_patrolPath:
-  - {fileID: 1447946362}
-  - {fileID: 785828621}
-  - {fileID: 230443522}
-  m_distToContinue: 1
-  m_skeletonAnimator: {fileID: 736158568}
   m_target: {fileID: 853635259}
-  m_canJump: 0
+  m_speed: 4
   m_isMounting: 0
+  m_canAttack: 0
   m_changeView: {fileID: 824515601}
-  m_navMeshOn: 1
 --- !u!54 &2102702662
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -8873,28 +8823,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 1.9050617, z: 0.5}
   m_Center: {x: 0, y: 0.9639623, z: -0}
---- !u!195 &2102702664
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2102702659}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 0
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!1 &2119197544
 GameObject:
   m_ObjectHideFlags: 0
