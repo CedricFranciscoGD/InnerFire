@@ -127,9 +127,6 @@ public class EnemyBNotWork : MonoBehaviour
         m_isAlive = m_levelAI[m_aiLevel].m_isMoving;
         m_baseSpeed = m_levelAI[m_aiLevel].m_speed;
         m_ChaseSpeed = m_levelAI[m_aiLevel].m_chaseSpeed;
-        m_stepHeight = m_levelAI[m_aiLevel].m_stepHeight;
-        m_dropHeight = m_levelAI[m_aiLevel].m_dropHeight;
-        m_jumpLength = m_levelAI[m_aiLevel].m_jumpLength;
 
         m_enemyNavMesh.speed = m_baseSpeed;
     }

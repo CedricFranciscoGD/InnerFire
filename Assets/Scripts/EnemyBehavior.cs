@@ -163,7 +163,7 @@ public class EnemyBehavior : MonoBehaviour
 
         if (m_isQTEactive && m_canAttack)
         {
-            m_charaController.enabled = false;
+            //m_charaController.enabled = false;
             m_tummoCam.m_isHanged = true;
             m_enemyNavMesh.speed = 0;
         
@@ -173,11 +173,16 @@ public class EnemyBehavior : MonoBehaviour
                 if (Input.GetKeyUp(KeyCode.Space))
                 {
                     m_counterQTE += 1;
+                    Debug.Log("Proc");
                     if (m_counterQTE > m_refCounterQTE)
                     {
                         m_isQTEactive = false;
+                        //m_charaController.enabled = true;
+                        m_tummoCam.Escaping();
+                        StartCoroutine(AttackAgainDelay());
+                        m_timeQTE = 0;
+                        m_counterQTE = 0;
                         m_charaController.enabled = true;
-                        m_tummoCam.m_isHanged = false;
                         StartCoroutine(AttackAgainDelay());
                     }
                 }
