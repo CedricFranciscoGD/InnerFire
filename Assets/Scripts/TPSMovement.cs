@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class TPSMovement : MonoBehaviour
 {
@@ -22,6 +23,7 @@ public class TPSMovement : MonoBehaviour
     private bool m_isOnGround;
     
     [SerializeField] private float m_jumpHeight = 3f;
+
     
     
     
@@ -42,12 +44,10 @@ public class TPSMovement : MonoBehaviour
         {
             m_VectorVelocity.y = -2f;
         }
-
         
-            
-            float Horizontal = Input.GetAxisRaw("Horizontal");
-            float Vertical = Input.GetAxisRaw("Vertical");
-            Vector3 Direction = new Vector3(Horizontal, 0f, Vertical).normalized;
+        float Horizontal = Input.GetAxisRaw("Horizontal");
+        float Vertical = Input.GetAxisRaw("Vertical");
+        Vector3 Direction = new Vector3(Horizontal, 0f, Vertical).normalized;
        
         
         
@@ -84,11 +84,14 @@ public class TPSMovement : MonoBehaviour
         else m_animator.SetBool("isWalking", false);
         
         //JUMP
-        if (Input.GetButtonDown("Jump") && m_isOnGround)
+        if (m_isOnGround)
         {
-            Debug.Log("Is Jumping");
-            m_VectorVelocity.y = Mathf.Sqrt(m_jumpHeight * -2f * m_gravity);
-            StartCoroutine(Jump());
+            if (Input.GetButtonDown("Jump"))
+            {
+                Debug.Log("Is Jumping");
+                m_VectorVelocity.y = Mathf.Sqrt(m_jumpHeight * -2f * m_gravity);
+                StartCoroutine(Jump());
+            }
         }
 
         //GRAVITY

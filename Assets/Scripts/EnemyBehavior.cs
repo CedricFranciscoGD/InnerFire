@@ -7,24 +7,25 @@ public class EnemyBehavior : MonoBehaviour
 {
     //__________________________________________
     // JUSTE POUR LE GYM
+    [Header("gym parameters")]
     [SerializeField] private bool m_isGym;
     [SerializeField] private bool m_canJump;
     [SerializeField] private bool m_canChasePlayer;
     //__________________________________________
     
-    
-    [Header("Player & chasing parameters")]
     private GameObject m_playerRef;
     private Vector3 m_playerPos;
     private CharacterController m_charaController;
     private ChangeView m_tummoCam;
+    
+    [Header("Player & chasing parameters")]
     [SerializeField] private LayerMask m_playerMask;
     [SerializeField] private float m_hearTriggerDistance;
     [SerializeField] private float m_visionTriggerDistance;
     [SerializeField] private float m_attackTriggerDistance;
     [SerializeField] private float m_timeToAttackAgain;
     private bool m_canAttack = true;
-    private bool m_isChasing = false;
+    private bool m_isChasing = true;
     private bool m_eyeContact = false;
 
     //QTE to change
@@ -41,9 +42,6 @@ public class EnemyBehavior : MonoBehaviour
     [SerializeField] private bool m_isAlive = false;
     [SerializeField] private float m_baseSpeed;
     [SerializeField] private float m_ChaseSpeed;
-    [SerializeField] private float m_stepHeight;
-    [SerializeField] private float m_dropHeight;
-    [SerializeField] private float m_jumpLength;
 
     [Header("Raycast")]
     private RaycastHit m_rayHit;
@@ -55,12 +53,10 @@ public class EnemyBehavior : MonoBehaviour
     private int m_progressMax;
     private Vector3 targetMovePointVectorPosition;
     [SerializeField] private float m_distToContinue;
-
-
+    
     /// ANIMATIONS
     [SerializeField] private Animator m_skeletonAnimator;
     
-
     private void Start()
     {
         m_progress = 0;
@@ -71,7 +67,7 @@ public class EnemyBehavior : MonoBehaviour
         m_enemyNavMesh.speed = m_baseSpeed;
         m_progressMax = m_patrolPath.Length - 1;
         
-        LoadLevelAI(false);
+        LoadLevelAI(false, 0);
         
         // GYM PART
         if (m_isGym)
@@ -101,11 +97,12 @@ public class EnemyBehavior : MonoBehaviour
         }
     }
     
-    public void LoadLevelAI(bool p_increaseAI)
+    public void LoadLevelAI(bool p_increaseAI, int p_levelAItoload)
     {
         if (p_increaseAI)
         {
-            m_aiLevel += 1;
+            m_aiLevel = p_levelAItoload;
+            
             if (m_aiLevel == 1)
             {
                 m_skeletonAnimator.SetBool("isCrawling", true);
@@ -129,16 +126,12 @@ public class EnemyBehavior : MonoBehaviour
                 m_canJump = true;
             }
             
-        }
-        
-        m_isAlive = m_levelAI[m_aiLevel].m_isMoving;
-        m_baseSpeed = m_levelAI[m_aiLevel].m_speed;
-        m_ChaseSpeed = m_levelAI[m_aiLevel].m_chaseSpeed;
-        m_stepHeight = m_levelAI[m_aiLevel].m_stepHeight;
-        m_dropHeight = m_levelAI[m_aiLevel].m_dropHeight;
-        m_jumpLength = m_levelAI[m_aiLevel].m_jumpLength;
+            m_isAlive = m_levelAI[m_aiLevel].m_isMoving;
+            m_baseSpeed = m_levelAI[m_aiLevel].m_speed;
+            m_ChaseSpeed = m_levelAI[m_aiLevel].m_chaseSpeed;
 
-        m_enemyNavMesh.speed = m_baseSpeed;
+            m_enemyNavMesh.speed = m_baseSpeed;
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -171,7 +164,7 @@ public class EnemyBehavior : MonoBehaviour
 
         if (m_isQTEactive && m_canAttack)
         {
-            m_charaController.enabled = false;
+            //m_charaController.enabled = false;
             m_tummoCam.m_isHanged = true;
             m_enemyNavMesh.speed = 0;
         
@@ -181,11 +174,16 @@ public class EnemyBehavior : MonoBehaviour
                 if (Input.GetKeyUp(KeyCode.Space))
                 {
                     m_counterQTE += 1;
+                    Debug.Log("Proc");
                     if (m_counterQTE > m_refCounterQTE)
                     {
                         m_isQTEactive = false;
+                        //m_charaController.enabled = true;
+                        m_tummoCam.Escaping();
+                        StartCoroutine(AttackAgainDelay());
+                        m_timeQTE = 0;
+                        m_counterQTE = 0;
                         m_charaController.enabled = true;
-                        m_tummoCam.m_isHanged = false;
                         StartCoroutine(AttackAgainDelay());
                     }
                 }

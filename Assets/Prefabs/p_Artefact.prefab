@@ -12,18 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c83e93e1ec778b647b40967ea7001470, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_aiToLoad: 0
+  m_unlockClimb: 0
+  m_unlockJump: 0
+  m_climbObstacles: {fileID: 0}
+  m_jumpObstacles: {fileID: 0}
   m_triggerDistance: 2.5
-  m_enemies:
-  - {fileID: 0}
+  m_enemies: []
   m_delayToUpgradeFoes: 1.5
   m_delayToOpenPath: 2
   m_reanimZone: {fileID: 8175848314425078434}
-  m_maxZone: 40
+  m_maxZone: 50
   m_lerpLength: 3
   m_lerpFillingAmount: 85
-  m_bridgeToOpen:
-  - {fileID: 0}
-  - {fileID: 0}
+  m_bridgeToOpen: []
   m_tummoAnimator: {fileID: 0}
 --- !u!1 &8175848312695634144
 GameObject:
@@ -34,6 +36,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8175848312695634147}
+  - component: {fileID: 7550178080261054305}
   m_Layer: 0
   m_Name: p_Artefact
   m_TagString: Untagged
@@ -57,6 +60,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -315, z: 0}
+--- !u!114 &7550178080261054305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8175848312695634144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73e31ee890608a84b98ad23f8b4fef80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_length: 20
 --- !u!1 &8175848314425078434
 GameObject:
   m_ObjectHideFlags: 0

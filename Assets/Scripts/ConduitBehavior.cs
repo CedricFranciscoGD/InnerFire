@@ -10,7 +10,12 @@ public class ConduitBehavior : MonoBehaviour
     [Header("Player & conduit parameters")]
     private GameObject m_playerRef;
     private Vector3 m_playerPos;
-    
+    [SerializeField] private int m_aiToLoad;
+    [SerializeField] private bool m_unlockClimb;
+    [SerializeField] private bool m_unlockJump;
+    [SerializeField] private GameObject m_climbObstacles;
+    [SerializeField] private GameObject m_jumpObstacles;
+
     [SerializeField] private float m_triggerDistance;
     private bool m_canTrigger = false;
     private bool m_isActive = false;
@@ -109,8 +114,18 @@ public class ConduitBehavior : MonoBehaviour
         yield return new WaitForSeconds(m_delayToUpgradeFoes);
         for (int i = 0; i < m_enemies.Length; i++)
         {
-            m_enemies[i].GetComponent<EnemyBehavior>().LoadLevelAI(true);
+            m_enemies[i].GetComponent<EnemyBehavior>().LoadLevelAI(true, m_aiToLoad);
             yield return new WaitForSeconds(Random.Range(0.5f, 1f));
+        }
+
+        if (m_unlockClimb)
+        {
+            m_climbObstacles.SetActive(false);
+        }
+
+        if (m_jumpObstacles)
+        {
+            m_jumpObstacles.SetActive(false);
         }
     }
 }

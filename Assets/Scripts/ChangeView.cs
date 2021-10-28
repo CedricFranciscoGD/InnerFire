@@ -6,13 +6,12 @@ using UnityEngine.Serialization;
 
 public class ChangeView : MonoBehaviour
 {
-    [SerializeField] private float m_duration = 1f;
-    [SerializeField] private Transform m_transDest;
-    [SerializeField] private GameObject m_cam;
     [SerializeField] private GameObject m_camSide;
     public bool m_isHanged = false;
 
-    [SerializeField] private int m_keyPressTime = 0;
+    //public int m_keyPressTime = 0;
+    
+    [SerializeField] private TPSMovement m_tpsMovement;
 
     private void Update()
     {
@@ -20,19 +19,27 @@ public class ChangeView : MonoBehaviour
         if (m_isHanged)
         {
             m_camSide.SetActive(true);
+            m_tpsMovement.enabled = false;
         }
-        if (Input.GetKey(KeyCode.X))
+        /*if (Input.GetKeyDown(KeyCode.X))
         {
-            m_keyPressTime += 1;
-            if (m_keyPressTime >= 3)
+            m_keyPressTime++;
+            if (m_keyPressTime >= 2 && m_isHanged)
             {
+                m_tpsMovement.enabled = true;
                 Debug.Log("Vous vous échappez avec succès");
-                m_camSide.SetActive(false);
+                
+                
                 m_keyPressTime = 0;
-                m_isHanged = false;
             }
-        }
+        }*/
     }
-    
+
+    public void Escaping()
+    {
+        m_tpsMovement.enabled = true;
+        m_isHanged = false;
+        m_camSide.SetActive(false);
+    }
 }
 
