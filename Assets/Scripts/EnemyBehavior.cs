@@ -66,6 +66,7 @@ public class EnemyBehavior : MonoBehaviour
         m_enemyNavMesh = GetComponent<NavMeshAgent>();
         m_enemyNavMesh.speed = m_baseSpeed;
         m_progressMax = m_patrolPath.Length - 1;
+        m_skeletonAnimator = GetComponentInChildren<Animator>();
         
         LoadLevelAI(false, 0);
         
