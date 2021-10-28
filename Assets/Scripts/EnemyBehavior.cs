@@ -7,17 +7,18 @@ public class EnemyBehavior : MonoBehaviour
 {
     //__________________________________________
     // JUSTE POUR LE GYM
+    [Header("gym parameters")]
     [SerializeField] private bool m_isGym;
     [SerializeField] private bool m_canJump;
     [SerializeField] private bool m_canChasePlayer;
     //__________________________________________
     
-    
-    [Header("Player & chasing parameters")]
     private GameObject m_playerRef;
     private Vector3 m_playerPos;
     private CharacterController m_charaController;
     private ChangeView m_tummoCam;
+    
+    [Header("Player & chasing parameters")]
     [SerializeField] private LayerMask m_playerMask;
     [SerializeField] private float m_hearTriggerDistance;
     [SerializeField] private float m_visionTriggerDistance;
