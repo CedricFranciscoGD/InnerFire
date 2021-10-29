@@ -7,10 +7,12 @@ public class EnemyBehavior : MonoBehaviour
 {
     //__________________________________________
     // JUSTE POUR LE GYM
-    [Header("gym parameters")]
+    [Header("Test parameters")]
     [SerializeField] private bool m_isGym;
     [SerializeField] private bool m_canJump;
     [SerializeField] private bool m_canChasePlayer;
+    [SerializeField] private bool m_chasePointTest;
+    [SerializeField] private Transform m_pointToChase;
     //__________________________________________
     
     private GameObject m_playerRef;
@@ -67,8 +69,16 @@ public class EnemyBehavior : MonoBehaviour
         m_enemyNavMesh.speed = m_baseSpeed;
         m_progressMax = m_patrolPath.Length - 1;
         m_skeletonAnimator = GetComponentInChildren<Animator>();
+
+        if (!m_chasePointTest)
+        {
+            LoadLevelAI(false, 0);
+        }
+        else
+        {
+            LoadLevelAI(true, 3);
+        }
         
-        LoadLevelAI(false, 0);
         
         // GYM PART
         if (m_isGym)
@@ -159,7 +169,14 @@ public class EnemyBehavior : MonoBehaviour
             }
             else
             {
-                m_enemyNavMesh.SetDestination(m_playerPos);
+                if (!m_chasePointTest)
+                {
+                    m_enemyNavMesh.SetDestination(m_playerPos);
+                }
+                else
+                {
+                    m_enemyNavMesh.SetDestination(m_pointToChase.transform.position);
+                }
             }
         }
 
