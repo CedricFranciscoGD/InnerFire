@@ -4,7 +4,227 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="694424b0-bd8d-437c-b812-90a9d9744b0e" name="Changes" comment="" />
+    <list default="true" id="694424b0-bd8d-437c-b812-90a9d9744b0e" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.InnerFire/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.InnerFire/.idea/indexLayout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.InnerFire/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.InnerFire/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Blue.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Blue.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Red.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Red.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Skeleton.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Skeleton/LP_Skeletton_LD_oPP_BaseColor.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Skeleton/LP_Skeletton_LD_oPP_BaseColor.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Skeleton/LP_Skeletton_LD_oPP_Emissive.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Skeleton/LP_Skeletton_LD_oPP_Emissive.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Skeleton/LP_Skeletton_LD_oPP_Height.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Skeleton/LP_Skeletton_LD_oPP_Height.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Skeleton/LP_Skeletton_LD_oPP_Metallic.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Skeleton/LP_Skeletton_LD_oPP_Metallic.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Skeleton/LP_Skeletton_LD_oPP_Normal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Skeleton/LP_Skeletton_LD_oPP_Normal.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Skeleton/LP_Skeletton_LD_oPP_Roughness.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Skeleton/LP_Skeletton_LD_oPP_Roughness.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Skeleton/Skeleton.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Skeleton/Skeleton.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Sol.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Sol.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Body.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Body/Body.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Body/Body.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Body/Body_Base_color.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Body/Body_Base_color.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Body/Body_Height.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Body/Body_Height.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Body/Body_MaskMap.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Body/Body_MaskMap.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Body/Body_Metallic.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Body/Body_Metallic.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Body/Body_Normal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Body/Body_Normal.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Body/Body_Normal_OpenGL.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Body/Body_Normal_OpenGL.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Body/Body_Roughness.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Body/Body_Roughness.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Eyes.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Eyes/Eyes.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Eyes/Eyes.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Eyes/Eyes_MaskMap.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Eyes/Eyes_MaskMap.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Eyes/PM3D_Sphere3D1_Base_color.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Eyes/PM3D_Sphere3D1_Base_color.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Eyes/PM3D_Sphere3D1_Height.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Eyes/PM3D_Sphere3D1_Height.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Eyes/PM3D_Sphere3D1_Metallic.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Eyes/PM3D_Sphere3D1_Metallic.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Eyes/PM3D_Sphere3D1_Normal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Eyes/PM3D_Sphere3D1_Normal.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Eyes/PM3D_Sphere3D1_Normal_OpenGL.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Eyes/PM3D_Sphere3D1_Normal_OpenGL.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Eyes/PM3D_Sphere3D1_Roughness.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Eyes/PM3D_Sphere3D1_Roughness.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Hair.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Hair/Hair.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Hair/Hair.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Hair/Hair_Base_color.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Hair/Hair_Base_color.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Hair/Hair_Height.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Hair/Hair_Height.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Hair/Hair_MaskMap.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Hair/Hair_MaskMap.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Hair/Hair_Metallic.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Hair/Hair_Metallic.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Hair/Hair_Normal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Hair/Hair_Normal.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Hair/Hair_Normal_OpenGL.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Hair/Hair_Normal_OpenGL.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Hair/Hair_Roughness.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Hair/Hair_Roughness.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Hand.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Hand/Hand.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Hand/Hand.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Hand/Hand_Base_color.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Hand/Hand_Base_color.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Hand/Hand_Height.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Hand/Hand_Height.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Hand/Hand_MaskMap.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Hand/Hand_MaskMap.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Hand/Hand_Metallic.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Hand/Hand_Metallic.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Hand/Hand_Normal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Hand/Hand_Normal.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Hand/Hand_Normal_OpenGL.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Hand/Hand_Normal_OpenGL.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Hand/Hand_Roughness.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Hand/Hand_Roughness.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Pants.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Pants/Extract4_Base_color.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Pants/Extract4_Base_color.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Pants/Extract4_Height.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Pants/Extract4_Height.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Pants/Extract4_Metallic.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Pants/Extract4_Metallic.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Pants/Extract4_Normal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Pants/Extract4_Normal.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Pants/Extract4_Normal_OpenGL.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Pants/Extract4_Normal_OpenGL.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Pants/Extract4_Roughness.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Pants/Extract4_Roughness.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Pants/Pant.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Pants/Pant.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Pants/Pant_MaskMap.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Pants/Pant_MaskMap.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Shirt.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Shirt/Extract1_Base_color.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Shirt/Extract1_Base_color.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Shirt/Extract1_Height.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Shirt/Extract1_Height.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Shirt/Extract1_Metallic.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Shirt/Extract1_Metallic.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Shirt/Extract1_Normal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Shirt/Extract1_Normal.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Shirt/Extract1_Normal_OpenGL.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Shirt/Extract1_Normal_OpenGL.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Shirt/Extract1_Roughness.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Shirt/Extract1_Roughness.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Shirt/Shirt.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Shirt/Shirt.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Shirt/Shirt_MaskMap.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Shirt/Shirt_MaskMap.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Sweat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Sweat/Extract19_Base_color.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Sweat/Extract19_Base_color.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Sweat/Extract19_Height.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Sweat/Extract19_Height.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Sweat/Extract19_Metallic.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Sweat/Extract19_Metallic.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Sweat/Extract19_Normal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Sweat/Extract19_Normal.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Sweat/Extract19_Normal_OpenGL.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Sweat/Extract19_Normal_OpenGL.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Sweat/Extract19_Roughness.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Sweat/Extract19_Roughness.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Sweat/Sweat.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Sweat/Sweat.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Sweat/Sweat_MaskMap.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/Tummo/Sweat/Sweat_MaskMap.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/protomats.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/protomats/Blue.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/protomats/Blue.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/protomats/D.Grey.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/protomats/D.Grey.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/protomats/D.Ground.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/protomats/D.Ground.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/protomats/Green.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/protomats/Green.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/protomats/GreenAOE.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/protomats/GreenAOE.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/protomats/Grey.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/protomats/Grey.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/protomats/Ground.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/protomats/Ground.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/protomats/Red.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/protomats/Red.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/protomats/RedGhost.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/protomats/RedGhost.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/protomats/Rock.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/protomats/Rock.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/protomats/Swamp.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/protomats/Swamp.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/protomats/Yellow.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material/protomats/Yellow.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Personnages.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Personnages/Baked_Skeleton_Rig.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Personnages/Baked_Skeleton_Rig.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Personnages/Skeleton.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Personnages/Skeleton.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Personnages/TummoPR.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Personnages/TummoPR.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Personnages/TummoPR.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Personnages/TummoPR.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ProtoDev/AIlevels.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ProtoDev/AIlevels/AI_lvl 0.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ProtoDev/AIlevels/AI_lvl 0.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ProtoDev/AIlevels/AI_lvl 1.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ProtoDev/AIlevels/AI_lvl 1.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ProtoDev/AIlevels/AI_lvl 2.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ProtoDev/AIlevels/AI_lvl 2.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ProtoDev/AIlevels/AI_lvl 3.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ProtoDev/AIlevels/AI_lvl 3.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ProtoDev/AIlevels/AI_lvl 4.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ProtoDev/AIlevels/AI_lvl 4.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ProtoDev/AIlevels/AI_lvl 5.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ProtoDev/AIlevels/AI_lvl 5.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ProtoDev/Proto.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ProtoDev/Proto.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ProtoDev/Proto.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ProtoDev/Proto/NavMesh.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ProtoDev/Proto/NavMesh.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ProtoDev/TestLD1.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ProtoDev/TestLD1/NavMesh.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ProtoDev/TestLD1/NavMesh.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Jim.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Jim.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Sky, fog and Vignette Test.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Sky, fog and Vignette Test.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Sun.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Sun.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe0.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe0.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe1.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe1.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe10.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe10.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe11.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe11.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe2.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe2.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe3.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe3.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe4.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe4.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe5.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe5.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe6.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe6.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe7.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe7.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe8.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe8.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe9.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe9.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,11 +234,11 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/rayUpVisual.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/HeadToPlayer.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/RingBehavior.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/EnemyBNotWork.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/EnemyBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/HeadToPlayer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/rayUpVisual.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/EnemyBNotWork.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/RingBehavior.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="1zrJwav45f6ID0I9jxVOulfayfN" />
   <component name="ProjectViewState">
@@ -70,6 +290,7 @@
       <workItem from="1634913736725" duration="1084000" />
       <workItem from="1635242655449" duration="16387000" />
       <workItem from="1635322711774" duration="1233000" />
+      <workItem from="1635845169000" duration="593000" />
     </task>
     <servers />
   </component>
