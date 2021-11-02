@@ -15,7 +15,7 @@ public class CrowdAI : MonoBehaviour
     [SerializeField] private PackAI[] m_packsArray;
     private int TempFixAdressArray = 0;
 
-    [Header("Skeleton Pack #1")] 
+    [Header("Skeleton Packs")] 
     [SerializeField] private int m_numberOfPacks;
     [SerializeField] private GameObject[] m_skeletonPack1;
     [SerializeField] private GameObject[] m_skeletonPack2;
@@ -26,10 +26,8 @@ public class CrowdAI : MonoBehaviour
     private void Start()
     {
         m_playerGO = GameObject.Find("_ChasePoint");
+        //m_packsArray = new PackAI[m_numberOfPacks];
         SetPack();
-
-        m_packsArray = new PackAI[m_numberOfPacks];
-
         GetPassingPoints();
     }
     
@@ -40,7 +38,7 @@ public class CrowdAI : MonoBehaviour
         m_packsArray[1].GetPack(m_skeletonPack2);
     }
 
-    private void GetPassingPoints()
+    public void GetPassingPoints()
     {
         for (int i = 0; i < m_passingPoints.Length; i++)
         {

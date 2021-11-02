@@ -8,6 +8,7 @@ using UnityEngine.AI;
 public class SkeletonAI : MonoBehaviour
 {
     [SerializeField] private float m_distanceChasePlayer;
+    [SerializeField] private CrowdAI m_entityAI;
 
     private GameObject m_destinationGO;
     public GameObject m_playerGO;
@@ -21,6 +22,7 @@ public class SkeletonAI : MonoBehaviour
 
     private void Start()
     {
+        m_entityAI = GameObject.Find("CrowdAI").GetComponent<CrowdAI>();
         m_navMesh = GetComponent<NavMeshAgent>();
         m_playerGO = GameObject.Find("_ChasePoint");
     }
@@ -37,6 +39,7 @@ public class SkeletonAI : MonoBehaviour
     //______________________________________________________________________________Destination
     private void PathFinder()
     {
+        //focus player
         float distToPlayer = Vector3.Distance(m_playerGO.transform.position, gameObject.transform.position);
 
         if (distToPlayer < m_distanceChasePlayer)
@@ -46,8 +49,17 @@ public class SkeletonAI : MonoBehaviour
         else
         {
             m_navMesh.SetDestination(m_destinationGO.transform.position);
+
+            if (m_isLeader)
+            {
+                float distFromLeader =
+                    Vector3.Distance(gameObject.transform.position, m_destinationGO.transform.position);
+                if (distFromLeader < 3)
+                {
+                    m_entityAI.GetPassingPoints();
+                }
+            }
         }
-        
     }
     
     public void SetNewFollowTarget(GameObject p_newDestination)

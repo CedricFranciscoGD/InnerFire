@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
-using Random = UnityEngine.Random;
+
 
 public class PackAI : MonoBehaviour
 {
@@ -17,6 +17,7 @@ public class PackAI : MonoBehaviour
     private int m_random = 0;
 
     private bool m_isChasingDirectly;
+    [SerializeField] private float m_delayPathCheck;
 
     private void Start()
     {
@@ -35,7 +36,7 @@ public class PackAI : MonoBehaviour
         }
         GetAIs();
     }
-    
+
     private void GetAIs()
     {
         for (int i = 0; i < m_packGO.Length; i++)
