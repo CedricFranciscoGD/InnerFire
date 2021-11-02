@@ -12,20 +12,38 @@ public class AgentAI2 : MonoBehaviour
 
     [Header("References")] 
     private GameObject m_playerGO;
-    private NavMeshAgent m_navMeshAgent;
     private EntityAI2 m_entityAI;
 
     [Header("Target & destination")]
     [SerializeField] private GameObject m_targetGO;
     private bool m_hasATarget = false;
+    private bool m_iChasing = false;
     private float m_distToChase = 10;
     private float m_distToMoveOn = 4;
 
+    [Header("AI/SO")]
+    private NavMeshAgent m_navMeshAgent;
+    [SerializeField] public AI_levelsSO[] m_aiLevelSO;
+    [SerializeField] private int m_levelAI;
+    private float m_speed;
+
     private void Start()
     {
+        m_playerGO = GameObject.Find("_ChasePoint");
         m_entityAI = GameObject.Find("_ChasePoint").GetComponent<EntityAI2>();
         m_navMeshAgent = GetComponent<NavMeshAgent>();
-        m_playerGO = GameObject.Find("_ChasePoint");
+    }
+    
+    public void LoadLevelAI(bool p_increaseAI, int p_levelAI)
+    {
+        if (p_increaseAI)
+        {
+            m_levelAI = p_levelAI;
+            
+            m_speed = m_aiLevelSO[p_levelAI].m_speed;
+
+            m_navMeshAgent.speed = m_speed;
+        }
     }
 
     private void Update()
@@ -38,33 +56,13 @@ public class AgentAI2 : MonoBehaviour
 
     private void Navigation()
     {
-        float distToPoint = Vector3.Distance(gameObject.transform.position, m_targetGO.transform.position);
-        float distToPlayer = Vector3.Distance(gameObject.transform.position, m_playerGO.transform.position);
-
-        if (distToPlayer < m_distToChase || distToPoint < m_distToMoveOn)
-        {
-            m_navMeshAgent.SetDestination(m_targetGO.transform.position);
-        }
-        else
-        {
-            m_navMeshAgent.SetDestination(m_targetGO.transform.position);
-        }
+        m_navMeshAgent.SetDestination(m_targetGO.transform.position);
     }
 
     public void SetNewTarget(GameObject p_newTarget)
     {
-        float distToPlayer = Vector3.Distance(gameObject.transform.position, m_playerGO.transform.position);
-        float distToTarget = Vector3.Distance(gameObject.transform.position, m_playerGO.transform.position);
-
-        if (distToPlayer < distToTarget)
-        {
-            Debug.Log("rejected");
-        }
-        else
-        {
-            m_targetGO = p_newTarget;
-            m_hasATarget = true;
-        }
+        m_targetGO = p_newTarget;
+        m_hasATarget = true;
     }
 
     private void OnDrawGizmos()
